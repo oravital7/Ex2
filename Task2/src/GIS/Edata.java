@@ -131,8 +131,8 @@ public class Edata implements Meta_data {
 	}
 
 	public String toString() {
-		String s = MAC + "," + SSID + "," +AuthMode + "," + 
-				FirstSeen + ","+Channel + "," + RSSI + "," +AccuracyMeters +","+ Type;
+		String s = MAC + ',' + SSID + ',' +AuthMode + ',' + 
+				FirstSeen + ','+Channel + ',' + RSSI + ',' +AccuracyMeters +','+ Type;
 		return s;
 	}
 }

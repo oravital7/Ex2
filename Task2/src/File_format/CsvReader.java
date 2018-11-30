@@ -102,6 +102,7 @@ public class CsvReader {
 	 */
 	public int get_column()
 	{
+		if(arr.size()==0) return 0;
 		return arr.get(0).size();
 	}
 
@@ -114,7 +115,7 @@ public class CsvReader {
 		ArrayList<ArrayList<String>> CopyOfArr = new ArrayList<ArrayList<String>>();
 
 		for (int m = 1; m < arr.size(); m++) {
-			CopyOfArr.add(new ArrayList<String>());//adding array
+			CopyOfArr.add(new ArrayList<String>()); //adding array
 			for (int j = 0; j < this.get_column(); j++) {
 				CopyOfArr.get(m-1).add(arr.get(m).get(j));	
 			}

@@ -9,15 +9,21 @@ import GIS.Layer;
 import GIS.Ldata;
 import Geom.Point3D;
 
+
+/**
+ * 
+ * This class convert CSV data to java objects 
+ *
+ */
 public class Csv2Elem {
 	private int rows;
 	private Layer layer;
 	private ArrayList<ArrayList<String>> arr;
 
 	public Csv2Elem(File entry) {
-		CsvReader  r = new CsvReader(entry.toString());
+		CsvReader  r = new CsvReader(entry.toString()); // Call to CsvReader class with 
 		if(!r.checkCsv()) {
-			throw new RuntimeException("File: "+entry.getPath() +" is Invaild");
+			throw new RuntimeException("File: "+entry.getPath() +" is Invalid! Please check file");
 		}
 		rows = r.get_rows();
 		arr = r.get_Array();
@@ -27,7 +33,7 @@ public class Csv2Elem {
 	}
 
 	public Layer MakeElements() {
-		for(int i=1; i<rows-1; i++) {
+		for(int i=0; i<rows-1; i++) {
 			Elements element = MakeElementsRaw(arr.get(i));
 			layer.add(element);
 		}

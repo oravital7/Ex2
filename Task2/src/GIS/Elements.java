@@ -29,4 +29,7 @@ public class Elements implements GIS_element {
 		return data;
 	}
 
+	public String toString() {
+		return data.toString() +','+ point.x()+','+point.y()+','+point.z();
+	}
 }
