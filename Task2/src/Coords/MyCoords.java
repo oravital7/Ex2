@@ -108,6 +108,7 @@ public class MyCoords implements coords_converter {
 	}
 
 	@Override
+	//check if a point is valid
 	public boolean isValid_GPS_Point(Point3D p) {
 		if(p.x()<=180 && p.x()>=-180 & p.y()<=90 && p.y()>=-90 && p.z()>=-450) return true; 
 		return false;
