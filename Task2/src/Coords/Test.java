@@ -1,21 +1,13 @@
 package Coords;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.TimeZone;
 
-import File_format.Csv2Elem;
-import File_format.Csv2kml;
-import File_format.CsvReader;
 import File_format.MultiCSV;
 import GIS.Edata;
 import GIS.Elements;
@@ -39,12 +31,11 @@ public class Test {
 
 
 		
-		String pattern = "MM-dd-yyyy";
 //		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		DateFormat dff = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 		Date d = df.parse("2017-12-01 10:50:05");
-		System.out.println(dff.format(d));
+//		System.out.println(dff.format(d));
 //		TimeZone tz = TimeZone.getTimeZone("UTC");
 //		df.setTimeZone(tz);
 //		String nowAsISO = df.format(new Date());
@@ -64,9 +55,15 @@ public class Test {
 //		Iterator<GIS_element> it = layer.iterator();
 //		GIS_element current = it.next();
 
+<<<<<<< HEAD
 		MultiCSV ok = new MultiCSV("C:\\Users\\Dana Mor\\Documents\\test");
 		ok.convert2kml();
 		
+=======
+		MultiCSV ok = new MultiCSV("D:\\New folder");
+//		ok.convert2kml();
+//		System.out.println();
+>>>>>>> d29847290aa8c18c00e656b67e49622f03cbcb9a
 //		Project p =	ok.getP();
 //		Iterator<GIS_layer> itt = p.iterator();
 //		while(itt.hasNext()) {
@@ -76,12 +73,12 @@ public class Test {
 //			Edata ed = (Edata) s.getData();
 //			
 //			System.out.println(ed.getFirstSeen());
-//			System.out.println(ed.getTime());
-//			System.out.println(ed.getDate());
-
-//			Ldata d = new Ldata();
-//			d = (Ldata) l.get_Meta_data();
-//			System.out.println(d.getUTC());
+//			System.out.println(ed.getTimeStamp());
+//			System.out.println(ed.getUTC());
+//			
+//			System.out.println();
+//			Ldata ld = (Ldata) l.get_Meta_data();
+//			System.out.println(ld.getUTC());
 //		}
 
 		
