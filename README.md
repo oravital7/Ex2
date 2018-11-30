@@ -1,6 +1,3 @@
-# Ex2
-Infrastructure for converting a CSV file to KML
-
 GPS coordinates
 =========
 
