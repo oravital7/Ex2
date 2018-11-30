@@ -64,7 +64,7 @@ public class Test {
 //		Iterator<GIS_element> it = layer.iterator();
 //		GIS_element current = it.next();
 
-		MultiCSV ok = new MultiCSV("D:\\New folder");
+		MultiCSV ok = new MultiCSV("C:\\Users\\Dana Mor\\Documents\\test");
 		ok.convert2kml();
 		
 //		Project p =	ok.getP();

@@ -28,7 +28,15 @@ public class MyCoords implements coords_converter {
 		double x= Math.asin(vlat)*180/Math.PI+plat;
 		double y= Math.asin((vlon/lonNorm))*(180/Math.PI)+plon;
 
+		//prevent from exit the world
+		if(y>180)
+			y=-(180-y%180);
+		
 		Point3D P=new Point3D(x, y, gps.z()+local_vector_in_meter.z());//returns the new point
+		
+		if(!isValid_GPS_Point(P))
+			throw new ArithmeticException("invalid GPS point");
+		
 		return P;
 	}
 
@@ -109,7 +117,7 @@ public class MyCoords implements coords_converter {
 	@Override
 	//check if a point is valid
 	public boolean isValid_GPS_Point(Point3D p) {
-		if(p.x()<=180 && p.x()>=-180 & p.y()<=90 && p.y()>=-90 && p.z()>=-450) return true; 
+		if(p.x()<=90 && p.x()>=-90 & p.y()<=180 && p.y()>=-180 && p.z()>=-450) return true; 
 		return false;
 	}
 

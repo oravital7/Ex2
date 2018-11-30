@@ -4,11 +4,21 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author Dana Mor and Or Avital
+ * this class get path to a csv file and transfer the information 
+ * into comfortable data stracture
+ *
+ */
 public class CsvReader {
 	public static ArrayList<ArrayList<String>> arr;
 	private String pathOfFile;
 
+	/**
+	 * 
+	 * @param str - path of the file
+	 */
 	public CsvReader(String str) 
 	{
 		pathOfFile=str;
@@ -64,6 +74,10 @@ public class CsvReader {
 		return header;
 	}
 	
+	/**
+	 * 
+	 * @return true if the csv is valid and false otherwise
+	 */
 	public boolean checkCsv() {
 		ArrayList<String> arr = get_header();
 		if(get_column()<11) return false;
