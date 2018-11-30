@@ -21,12 +21,12 @@ public class MyCoords implements coords_converter {
 		double vlat = local_vector_in_meter.x();
 		double vlon = local_vector_in_meter.y();
 
-		double lonNorm= Math.cos(plat*Math.PI/180)*R*(Math.PI/180);
+		double lonNorm= Math.cos(plat*Math.PI/180)*R;
 
 		vlat=vlat/R;		
 
 		double x= Math.asin(vlat)*180/Math.PI+plat;
-		double y= Math.asin((vlon/lonNorm))+plon;
+		double y= Math.asin((vlon/lonNorm))*(180/Math.PI)+plon;
 
 		Point3D P=new Point3D(x, y, gps.z()+local_vector_in_meter.z());//returns the new point
 		return P;
@@ -100,7 +100,6 @@ public class MyCoords implements coords_converter {
 
 		double distance = distance3d(gps0,gps1);
 
-		double dd = gps1.z() - gps0.z();
 		double eleveation = Math.toDegrees(Math.asin(vec.z()/distance));
 		 
 		double arr[] = {azimut,eleveation, distance};
