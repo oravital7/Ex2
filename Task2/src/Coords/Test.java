@@ -56,6 +56,8 @@ public class Test {
 //		GIS_element current = it.next();
 
 		MultiCSV ok = new MultiCSV("D:\\New folder");
+		ok.convert2kml();
+		System.out.println();
 //		ok.convert2kml();
 //		System.out.println();
 //		Project p =	ok.getP();

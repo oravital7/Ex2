@@ -53,5 +53,9 @@ public class Ldata implements Meta_data {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String toString() {
+		return dir+","+name+","+UTC+","+time;
+	}
 
 }

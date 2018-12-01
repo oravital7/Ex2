@@ -34,5 +34,9 @@ public class Pdata implements Meta_data {
 		time = df.format(new Date());
 		UTC = Instant.parse(time).toEpochMilli();
 	}
+	
+	public String toString() {
+		return time+ ","+ UTC;
+	}
 
 }

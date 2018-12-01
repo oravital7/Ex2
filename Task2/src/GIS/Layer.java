@@ -4,7 +4,10 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
+/**
+ * This Store in HashSet each elements that we created
+ *
+ */
 public class Layer implements GIS_layer {
 	private Set<GIS_element> list;
 	private Ldata data;

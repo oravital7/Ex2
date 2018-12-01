@@ -11,7 +11,7 @@ import Geom.Point3D;
 
 public class Edata implements Meta_data {
 
-	private String MAC, SSID, AuthMode, Type, COLOR, FirstSeen;
+	private String MAC, SSID, AuthMode, Type, COLOR, FirstSeen, Time;
 	private int Channel, RSSI;
 	private double AccuracyMeters;
 	private long UTC=0;
@@ -24,12 +24,15 @@ public class Edata implements Meta_data {
 		return UTC;
 	}
 
+	/**
+	 * Calculate the current UTC when creating the file
+	 */
 	private void updateUTC() {
-		TimeZone tz = TimeZone.getTimeZone("UTC");
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+		TimeZone tz = TimeZone.getTimeZone("UTC"); // Determine UTC to be The timezone
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); // Data format ISO-8601(google earth TimeStamp)
 		df.setTimeZone(tz);
-		String time = df.format(date);
-		UTC = Instant.parse(time).toEpochMilli();
+		Time = df.format(date); // Save TimeStamp as String
+		UTC = Instant.parse(Time).toEpochMilli(); // and finally save long milisec for UTC
 	}
 
 	//unnecessary at the moment
@@ -40,21 +43,25 @@ public class Edata implements Meta_data {
 
 	//*****************Public methods**********************//
 
+
 	public String getTimeStamp() {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-		String TimeStamp = df.format(date);
-		return TimeStamp;
+		return Time;
 	}
 
+	/**
+	 * When we got the FirstSeen we can calculate as well UTC
+	 * and that function make a Date variable
+	 * @param FirstSeen
+	 */
 	public void setFirstSeen(String FirstSeen) {
 		this.FirstSeen = FirstSeen;
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // FirstSeen as that format
 		try {
-			date = df.parse(FirstSeen);
+			date = df.parse(FirstSeen); // Save it as a date
 		} catch (ParseException e) {
-			throw new RuntimeException("Invaild Format Date");
+			throw new RuntimeException("Invaild Format Date"); // If something go wrong with parse
 		}
-		updateUTC();
+		updateUTC(); // Update UTC as well
 	}
 
 	public void setMAC(String mAC) {
