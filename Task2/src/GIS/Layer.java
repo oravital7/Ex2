@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 /**
- * This Store in HashSet each elements that we created
+ * This calss Store in HashSet each elements that we created
  *
  */
 public class Layer implements GIS_layer {

@@ -1,6 +1,5 @@
 package Test;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;

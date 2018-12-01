@@ -6,7 +6,6 @@ public class MyCoords implements coords_converter {
 
 	//Earth’s radius, sphere
 	private final int R=6371*1000;//6378137;
-	//	private final double Lonnormal=6371*1000;//6378137;
 	@Override
 	public Point3D add(Point3D gps, Point3D local_vector_in_meter) {
 

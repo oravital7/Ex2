@@ -8,7 +8,10 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import Geom.Point3D;
-
+/**
+ * This class represent the Data of the elements
+ *
+ */
 public class Edata implements Meta_data {
 
 	private String MAC, SSID, AuthMode, Type, COLOR, FirstSeen, Time;

@@ -9,6 +9,10 @@ import GIS.GIS_project;
 import GIS.Ldata;
 import Geom.Point3D;
 
+/**
+ * This class translate data to KML tags
+ *
+ */
 public class Csv2kml {
 	private StringBuilder sb;
 	
