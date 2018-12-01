@@ -7,18 +7,28 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import Geom.Point3D;
-
+/**
+ * 
+ * @author Dana Mor and Or avital
+ *this class represent the Data of the layer
+ */
 public class Ldata implements Meta_data {
 
 	private String dir, name, time;
 	private long UTC;
-	
+	/**
+	 * 
+	 * @param dir - path of the file
+	 * @param name - name of the file
+	 */
 	public Ldata(String dir,String name) {
 		this.dir=dir;
 		this.name=name;
 		currentTime();
 	}
-
+	/**
+	 * this function saves the time when the layer was written
+	 */
 	private void currentTime() {
 		TimeZone tz = TimeZone.getTimeZone("UTC");
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
@@ -30,11 +40,11 @@ public class Ldata implements Meta_data {
 	public String getName() {
 		return name;
 	}
-	
+
 	public String getTime() {
 		return time;
 	}
-	
+
 	public String getDir() {
 		return dir;
 	}
@@ -42,7 +52,10 @@ public class Ldata implements Meta_data {
 	public void setDir(String dir) {
 		this.dir = dir;
 	}
-	
+
+	/**
+	 * this function returns UTC
+	 */
 	@Override
 	public long getUTC() {
 		return UTC;

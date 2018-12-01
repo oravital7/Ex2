@@ -7,7 +7,11 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import Geom.Point3D;
-
+/**
+ * 
+ * @author Dana Mor and Or avital
+ *this class represent the Data of the project
+ */
 public class Pdata implements Meta_data {
 	private String time;
 	private long UTC;
@@ -15,7 +19,9 @@ public class Pdata implements Meta_data {
 	public Pdata() {
 		currentTime();
 	}
-
+	/**
+	 * this function returns UTC
+	 */
 	@Override
 	public long getUTC() {
 		return UTC;
@@ -26,7 +32,9 @@ public class Pdata implements Meta_data {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	/**
+	 * this function saves the time when the project was written
+	 */
 	private void currentTime() {
 		TimeZone tz = TimeZone.getTimeZone("UTC");
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
