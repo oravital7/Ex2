@@ -11,7 +11,7 @@ The program analyzes data from a CSV file and converts them into Java objects
 With the appropriate changes you can export the information to any 
 file type you choose by going over the objects.
 
-MyCoords class able to convert a basic coordinate system, as:
+MyCoords class able to convert a basic coordinate system with the following functions::
 - computes a new point which is the gps point transformed by a 3D vector (in meters).
 - computes the 3D distance (in meters) between the two gps like points.
 - computes the 3D vector (in meters) between two gps like points.
