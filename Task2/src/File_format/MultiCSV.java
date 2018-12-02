@@ -56,6 +56,7 @@ public class MultiCSV {
 	 * This method finally export a kml file
 	 */
 	public void convert2kml() {
+		System.out.println("Start export File...");
 		StringBuilder sb = new StringBuilder();
 		Csv2kml convert = new Csv2kml();
 		sb.append(convert.start2CSV(p)); // Call the start2CSV class and get back the KML translation
@@ -68,7 +69,7 @@ public class MultiCSV {
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
+		System.out.println("Done!");
 	}
 
 	public Project getP() {
