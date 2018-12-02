@@ -1,7 +1,8 @@
 GPS coordinates
 =========
 
-This project convert csv files into one kml file, wich repreasent all points by time and location.
+This project convert csv files into one kml file, wich repreasent all points by time and location,
+and support a basic coordinate system converter.
 
 
 General info
@@ -9,6 +10,12 @@ General info
 The program analyzes data from a CSV file and converts them into Java objects
 With the appropriate changes you can export the information to any 
 file type you choose by going over the objects.
+
+MyCoords class able to convert a basic coordinate system, as:
+- computes a new point which is the gps point transformed by a 3D vector (in meters).
+- computes the 3D distance (in meters) between the two gps like points.
+- computes the 3D vector (in meters) between two gps like points.
+- computes the polar representation of the 3D vector be gps0-->gps1.
 
 Currently, the system fully supports export to KML with the relevant tags
 You can read about KML: https://en.wikipedia.org/wiki/Keyhole_Markup_Language
