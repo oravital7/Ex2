@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class TestCsvReader {
 	
-CsvReader cR= new CsvReader("csvT.csv");	
+CsvReader cR= new CsvReader("ExamplesFiles\\csvT.csv");	
 
 
 	@Test

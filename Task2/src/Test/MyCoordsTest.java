@@ -61,7 +61,7 @@ class MyCoordsTest {
 		Point3D inv_x3= new Point3D(32.103315,-181,670);
 		Point3D inv_x4= new Point3D(91,35.209039,670);
 		Point3D inv_x5= new Point3D(-91,650,35.209039);
-		Point3D inv_x6= new Point3D(91,35.209039,-451);
+		Point3D inv_x6= new Point3D(90,35.209039,-451);
 
 		//checks valid points
 		assertTrue(mC.isValid_GPS_Point(x0));
