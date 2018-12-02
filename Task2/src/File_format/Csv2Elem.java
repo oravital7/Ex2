@@ -23,7 +23,7 @@ public class Csv2Elem {
 	public Csv2Elem(File entry) {
 		CsvReader  r = new CsvReader(entry.toString()); // Call to CsvReader class with correct File Path 
 		if(!r.checkCsv()) { // Check if is a valid file of our CSV
-			throw new RuntimeException("File: "+entry.getPath() +" is Invalid! Please check file");
+			throw new RuntimeException("File: "+entry.getPath() +" is Invalid! Please check the file");
 		}
 		rows = r.get_rows();
 		arr = r.get_Array();

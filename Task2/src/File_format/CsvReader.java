@@ -83,17 +83,17 @@ public class CsvReader {
 		if(get_column()<11) return false;
 		boolean check[] = new boolean[11];
 		for(int i=0; i<check.length; i++) {
-			if(arr.get(i).equals("MAC")) check[0]=true;
-			else if(arr.get(i).equals("SSID")) check[1]=true;
-			else if(arr.get(i).equals("AuthMode")) check[2]=true;
-			else if(arr.get(i).equals("FirstSeen")) check[3]=true;
-			else if(arr.get(i).equals("Channel")) check[4]=true;
-			else if(arr.get(i).equals("RSSI")) check[5]=true;
-			else if(arr.get(i).equals("CurrentLatitude")) check[6]=true;
-			else if(arr.get(i).equals("CurrentLongitude")) check[7]=true;
-			else if(arr.get(i).equals("AltitudeMeters")) check[8]=true;
-			else if(arr.get(i).equals("AccuracyMeters")) check[9]=true;
-			else if(arr.get(i).equals("Type")) check[10]=true;
+			if(arr.get(i).contains("MAC")) check[0]=true;
+			else if(arr.get(i).contains("SSID")) check[1]=true;
+			else if(arr.get(i).contains("AuthMode")) check[2]=true;
+			else if(arr.get(i).contains("FirstSeen")) check[3]=true;
+			else if(arr.get(i).contains("Channel")) check[4]=true;
+			else if(arr.get(i).contains("RSSI")) check[5]=true;
+			else if(arr.get(i).contains("CurrentLatitude")) check[6]=true;
+			else if(arr.get(i).contains("CurrentLongitude")) check[7]=true;
+			else if(arr.get(i).contains("AltitudeMeters")) check[8]=true;
+			else if(arr.get(i).contains("AccuracyMeters")) check[9]=true;
+			else if(arr.get(i).contains("Type")) check[10]=true;
 		}
 		for(int i=0; i<check.length; i++) {
 			if(check[i]==false) return false;
